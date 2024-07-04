@@ -19,34 +19,30 @@
     
     <main>
         <section class="carousel">
-            <div class="carousel-container">
-                <input type="radio" name="carousel" id="slide1" checked>
-                <input type="radio" name="carousel" id="slide2">
-                <input type="radio" name="carousel" id="slide3">
-                <input type="radio" name="carousel" id="slide4">
 
-                <div class="carousel-slides">
-                    <div class="carousel-slide">
-                        <img src="assets/html/beach.jpg" alt="Coastal Image 1">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/html/ca_2.jpg" alt="Coastal Image 2">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/html/coastal_road.jpg" alt="Coastal Image 3">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/html/ft_bragg_ca.jpg" alt="Coastal Image 4">
-                    </div>
-                </div>
-
-                <div class="carousel-navigation">
-                    <label for="slide1" class="carousel-nav"></label>
-                    <label for="slide2" class="carousel-nav"></label>
-                    <label for="slide3" class="carousel-nav"></label>
-                    <label for="slide4" class="carousel-nav"></label>
-                </div>
+            <div id="ImageCarouselCSS" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#ImageCarouselCSS" data-slide-to="0" class="active"></li>
+                <li data-target="#ImageCarouselCSS" data-slide-to="1"></li>
+                <li data-target="#ImageCarouselCSS" data-slide-to="2"></li>
+              </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/html/beach.jpg" class="d-block w-100" alt="Beach">
             </div>
+            <div class="carousel-item">
+              <img src="assets/html/ca_2.jpg" class="d-block w-100" alt="Arch">
+            </div>
+            <div class="carousel-item">
+              <img src="asset/html/coastal_road.jpg" class="d-block w-100" alt="Coastal Road">
+            </div>
+            <div class="carousel-item">
+              <img src="asset/html/ft_bragg_ca.jpg" class="d-block w-100" alt="Ft Bragg CA">
+            </div>
+          </div>
+        </div>
+
+            
         </section>
 
         <section class="content">
