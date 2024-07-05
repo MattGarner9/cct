@@ -38,8 +38,8 @@ h1, h2 {
 
 .carousel {
     position: relative;
-    max-width: 65%;
-    max-height: 40%;
+    width: 65%;
+    padding-top: 48.75%; /* 4:3 aspect ratio */
     margin: 20px auto;
     overflow: hidden;
     border: 2px solid red;
@@ -47,19 +47,25 @@ h1, h2 {
 }
 
 .carousel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     display: flex;
     transition: transform 1s ease-in-out;
 }
 
 .carousel-slide {
     min-width: 100%;
+    height: 100%;
     box-sizing: border-box;
 }
 
 .carousel-slide img {
     width: 100%;
-    height: 100%; /* Reduce height by 33% */
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
 .carousel-dots {
