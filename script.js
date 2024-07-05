@@ -14,7 +14,14 @@ function nextSlide() {
     showSlide(currentIndex);
 }
 
-setInterval(nextSlide, 4000);
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentIndex = index;
+        showSlide(currentIndex);
+    });
+});
+
+setInterval(nextSlide, 8000); // Slow down the animation
 
 // Initial call to display the first slide
 showSlide(currentIndex);
