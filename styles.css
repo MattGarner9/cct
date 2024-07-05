@@ -38,7 +38,7 @@ h1, h2 {
 
 .carousel {
     position: relative;
-    max-width: 100%;
+    max-width: 65%;
     margin: 20px auto;
     overflow: hidden;
     border: 2px solid red;
@@ -61,35 +61,6 @@ h1, h2 {
     display: block;
 }
 
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-
 @keyframes slide {
     0% { transform: translateX(0%); }
     20% { transform: translateX(0%); }
@@ -100,6 +71,24 @@ h1, h2 {
     75% { transform: translateX(-300%); }
     95% { transform: translateX(-300%); }
     100% { transform: translateX(0%); }
+}
+
+.carousel-dots {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background-color: navy;
 }
 
 footer {
