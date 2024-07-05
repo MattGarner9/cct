@@ -38,8 +38,8 @@ h1, h2 {
 
 .carousel {
     position: relative;
-    width: 65%;
-    padding-top: 48.75%; /* 4:3 aspect ratio */
+    width: 40%;
+    padding-top: 30%; /* 4:3 aspect ratio */
     margin: 20px auto;
     overflow: hidden;
     border: 2px solid navy;
