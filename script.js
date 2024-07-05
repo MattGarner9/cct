@@ -21,7 +21,7 @@ dots.forEach((dot, index) => {
     });
 });
 
-setInterval(nextSlide, 8000); // Slow down the animation
+setInterval(nextSlide, 5000); // Slow down the animation
 
 // Initial call to display the first slide
 showSlide(currentIndex);
