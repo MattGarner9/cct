@@ -17,7 +17,7 @@
   cxone('init', '5157');
   cxone('guide','init');
 
-  const guideEvents = ['templateDisplayed','menuOpened','menuClosed','entrypointOpened','entrypointClosed',proactiveOfferDisplayed,
+  const guideEvents = ['templateDisplayed','menuOpened','menuClosed','entrypointOpened','entrypointClosed','proactiveOfferDisplayed',
 'proactiveOfferSuccessful','proactiveOfferDeclined'
 ];
       
