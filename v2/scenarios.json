@@ -14,10 +14,22 @@
     "photoCredit": "Photo: Arvind Vallabh on Unsplash"
   },
   "integrations": {
-    "guide":  { "label": "Guide",           "color": "#1f7aa8" },
-    "chat":   { "label": "Chat (DFO)",      "color": "#2e8b57" },
-    "events": { "label": "Guide + Events",  "color": "#8a4fbf" },
-    "ai":     { "label": "Guide + Copilot", "color": "#d9822b" }
+    "guide": {
+      "label": "Guide",
+      "color": "#1f7aa8"
+    },
+    "chat": {
+      "label": "Chat (DFO)",
+      "color": "#2e8b57"
+    },
+    "events": {
+      "label": "Guide + Events",
+      "color": "#8a4fbf"
+    },
+    "ai": {
+      "label": "Guide + Copilot",
+      "color": "#d9822b"
+    }
   },
   "scenarios": [
     {
@@ -25,14 +37,24 @@
       "title": "Guide – Basic (Tenant 1016)",
       "integration": "guide",
       "category": "Guide templates",
-      "tags": ["basic", "tenant 1016"],
+      "tags": [
+        "basic",
+        "tenant 1016"
+      ],
+      "digitalPoc": "",
+      "skill": "",
+      "comment": "",
       "tenant": "1016",
       "site": "portal",
       "siteName": "Customer Portal",
       "description": "Basic Guide init against a different tenant (1016). Replaces the old about.html.",
       "how": "Load the page; Guide appears per the tenant 1016 configuration.",
-      "calls": ["cxone('guide', 'init');"],
-      "extra": ["// cxone('guide', 'init', 'b4aa60a6-0773-4791-90dd-6c4c2d4388b9');"],
+      "calls": [
+        "cxone('guide', 'init');"
+      ],
+      "extra": [
+        "// cxone('guide', 'init', 'b4aa60a6-0773-4791-90dd-6c4c2d4388b9');"
+      ],
       "legacyPage": "about.html"
     },
     {
@@ -40,13 +62,22 @@
       "title": "Chat Redesign with Guide – AutoStart",
       "integration": "chat",
       "category": "Chat",
-      "tags": ["autostart", "chat", "C210"],
+      "tags": [
+        "autostart",
+        "chat",
+        "C210"
+      ],
+      "digitalPoc": "",
+      "skill": "",
+      "comment": "",
       "tenant": "5157",
       "site": "support",
       "siteName": "Support Page",
       "description": "Direct chat init with a chat config ID; chat auto-starts.",
       "how": "Load the page and the chat window starts on its own.",
-      "calls": ["cxone('chat', 'init', 5157, 'chat_1d1500d0-6758-4726-a4bc-59a85b77dee1');"],
+      "calls": [
+        "cxone('chat', 'init', 5157, 'chat_1d1500d0-6758-4726-a4bc-59a85b77dee1');"
+      ],
       "extra": [],
       "legacyPage": "about2.html"
     },
@@ -55,13 +86,22 @@
       "title": "2 Button Template with Rage Click",
       "integration": "guide",
       "category": "Guide templates",
-      "tags": ["2-button", "rage click", "C210"],
+      "tags": [
+        "2-button",
+        "rage click",
+        "C210"
+      ],
+      "digitalPoc": "",
+      "skill": "",
+      "comment": "",
       "tenant": "5157",
       "site": "portal",
       "siteName": "Customer Portal",
       "description": "Two-button Guide template plus rage-click detection.",
       "how": "Click the same element 3+ times quickly to trigger the rage-click offer.",
-      "calls": ["cxone('guide', 'init');"],
+      "calls": [
+        "cxone('guide', 'init');"
+      ],
       "extra": [],
       "legacyPage": "about3.html"
     },
@@ -70,13 +110,22 @@
       "title": "Proactive Chat / Email",
       "integration": "guide",
       "category": "Proactive",
-      "tags": ["proactive", "email", "C210"],
+      "tags": [
+        "proactive",
+        "email",
+        "C210"
+      ],
+      "digitalPoc": "",
+      "skill": "",
+      "comment": "",
       "tenant": "5157",
       "site": "portal",
       "siteName": "Customer Portal",
       "description": "Proactive offer displayed by Guide; the customer can accept chat or email.",
       "how": "Wait on the page for the proactive offer to appear.",
-      "calls": ["cxone('guide', 'init');"],
+      "calls": [
+        "cxone('guide', 'init');"
+      ],
       "extra": [],
       "legacyPage": "about4.html"
     },
@@ -85,13 +134,21 @@
       "title": "3 Button Template",
       "integration": "guide",
       "category": "Guide templates",
-      "tags": ["3-button", "C210"],
+      "tags": [
+        "3-button",
+        "C210"
+      ],
+      "digitalPoc": "",
+      "skill": "",
+      "comment": "",
       "tenant": "5157",
       "site": "portal",
       "siteName": "Customer Portal",
       "description": "Three-entry Guide menu.",
       "how": "Open the Guide menu and pick an entry point.",
-      "calls": ["cxone('guide', 'init');"],
+      "calls": [
+        "cxone('guide', 'init');"
+      ],
       "extra": [],
       "legacyPage": "about5.html"
     },
@@ -100,14 +157,25 @@
       "title": "Event Broadcasting – Template Displayed",
       "integration": "events",
       "category": "Event broadcasting",
-      "tags": ["events", "3-button", "C210"],
+      "tags": [
+        "events",
+        "3-button",
+        "C210"
+      ],
+      "digitalPoc": "",
+      "skill": "",
+      "comment": "",
       "tenant": "5157",
       "site": "portal",
       "siteName": "Customer Portal",
       "description": "Listens for the templateDisplayed event and logs it.",
       "how": "Load the page and watch the event log in the Test Panel.",
-      "calls": ["cxone('guide', 'init');"],
-      "events": ["templateDisplayed"],
+      "calls": [
+        "cxone('guide', 'init');"
+      ],
+      "events": [
+        "templateDisplayed"
+      ],
       "extra": [],
       "legacyPage": "about6.html"
     },
@@ -116,18 +184,35 @@
       "title": "Event Broadcasting – All Events",
       "integration": "events",
       "category": "Event broadcasting",
-      "tags": ["events", "pcq", "proactive", "C210"],
+      "tags": [
+        "events",
+        "pcq",
+        "proactive",
+        "C210"
+      ],
+      "digitalPoc": "",
+      "skill": "",
+      "comment": "",
       "tenant": "5157",
       "site": "portal",
       "siteName": "Customer Portal",
       "description": "Listens for all 11 Guide events (menu, entrypoint, proactive offer, PCQ).",
       "how": "Interact with the menu, offers and pre-chat questions; watch the event log.",
-      "calls": ["cxone('guide', 'init');"],
+      "calls": [
+        "cxone('guide', 'init');"
+      ],
       "events": [
-        "templateDisplayed", "menuOpened", "menuClosed",
-        "entrypointOpened", "entrypointClosed",
-        "proactiveOfferDisplayed", "proactiveOfferSuccessful", "proactiveOfferDeclined",
-        "pcqDisplayed", "pcqFieldPopulated", "pcqSubmitted"
+        "templateDisplayed",
+        "menuOpened",
+        "menuClosed",
+        "entrypointOpened",
+        "entrypointClosed",
+        "proactiveOfferDisplayed",
+        "proactiveOfferSuccessful",
+        "proactiveOfferDeclined",
+        "pcqDisplayed",
+        "pcqFieldPopulated",
+        "pcqSubmitted"
       ],
       "extra": [],
       "legacyPage": "about7.html"
@@ -137,13 +222,22 @@
       "title": "1 Button Template – Chat Redesign",
       "integration": "guide",
       "category": "Guide templates",
-      "tags": ["1-button", "redesign", "C210"],
+      "tags": [
+        "1-button",
+        "redesign",
+        "C210"
+      ],
+      "digitalPoc": "",
+      "skill": "",
+      "comment": "",
       "tenant": "5157",
       "site": "portal",
       "siteName": "Customer Portal",
       "description": "Single-entry Guide template with the redesigned chat window.",
       "how": "Click the single Guide entry point to open chat.",
-      "calls": ["cxone('guide', 'init');"],
+      "calls": [
+        "cxone('guide', 'init');"
+      ],
       "extra": [],
       "legacyPage": "about8.html"
     },
@@ -152,13 +246,23 @@
       "title": "g2g Live Chat Copilot – Redesign",
       "integration": "ai",
       "category": "Copilot / AI",
-      "tags": ["1-button", "copilot", "custom css", "C210"],
+      "tags": [
+        "1-button",
+        "copilot",
+        "custom css",
+        "C210"
+      ],
+      "digitalPoc": "",
+      "skill": "",
+      "comment": "",
       "tenant": "5157",
       "site": "portal",
       "siteName": "Customer Portal",
       "description": "1-button template with custom CSS overrides for the Live Chat Copilot redesign.",
       "how": "Open chat. Uncomment the custom CSS lines in 'extra' to hide the 'Start new chat' control.",
-      "calls": ["cxone('guide', 'init');"],
+      "calls": [
+        "cxone('guide', 'init');"
+      ],
       "extra": [
         "// cxone('chat', 'setCustomCss', '[data-selector-item=\"START_NEW_CHAT\"] {display:none !important};');",
         "// cxone('chat', 'setCustomCss', '[data-selector=\"START_NEW_CHAT\"] {display:none !important};');",

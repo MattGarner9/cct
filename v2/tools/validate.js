@@ -15,6 +15,7 @@ data.scenarios.forEach((s, i) => {
   required.forEach(k => { if (s[k] == null || s[k] === "" || (Array.isArray(s[k]) && !s[k].length)) errors.push(`${where}: missing "${k}"`); });
   if (s.id && !/^[a-z0-9-]+$/.test(s.id)) errors.push(`${where}: id must be lowercase letters, numbers and dashes only`);
   if (s.integration && !data.integrations[s.integration]) errors.push(`${where}: unknown integration "${s.integration}"`);
+  ["digitalPoc", "skill", "comment"].forEach(k => { if (s[k] != null && typeof s[k] !== "string") errors.push(`${where}: "${k}" must be text`); });
   if (s.hero && !fs.existsSync(path.join(root, s.hero))) errors.push(`${where}: hero file not found: ${s.hero}`);
   if (s.tenant != null && !/^\d+$/.test(String(s.tenant))) warnings.push(`${where}: tenant "${s.tenant}" is not numeric`);
 });

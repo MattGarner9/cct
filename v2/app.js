@@ -25,6 +25,7 @@
   }
 
   /* ---------- helpers ---------- */
+  function val(x) { return x == null || String(x).trim() === "" ? '<span class="none">—</span>' : esc(x); }
   function integ(data, key) { return data.integrations[key] || { label: key, color: "#667" }; }
   function badge(data, key) { var i = integ(data, key); return '<span class="badge" style="--c:' + esc(i.color) + '">' + esc(i.label) + "</span>"; }
   function scenarioUrl(id) { return "scenario.html?scenario=" + encodeURIComponent(id); }
@@ -178,7 +179,10 @@
       "<dt>Environment</dt><dd>" + esc(env.label) + "</dd>" +
       "<dt>Category</dt><dd>" + esc(s.category) + "</dd>" +
       (s.legacyPage ? "<dt>Old page</dt><dd>" + esc(s.legacyPage) + "</dd>" : "") +
-      "<dt>Tags</dt><dd>" + esc((s.tags || []).join(", ")) + "</dd></dl>" +
+      "<dt>Tags</dt><dd>" + esc((s.tags || []).join(", ")) + "</dd>" +
+      "<dt>Digital POC</dt><dd>" + val(s.digitalPoc) + "</dd>" +
+      "<dt>Skill</dt><dd>" + val(s.skill) + "</dd></dl>" +
+      '<div><h3>Comment</h3><div class="comment">' + val(s.comment) + "</div></div>" +
       '<div class="how"><b>How to trigger</b><br>' + esc(s.how || "") + "</div>" +
       '<div><h3>Additional script lines</h3><textarea id="extra" rows="4" placeholder="e.g. cxone(\'guide\',\'setCustomCss\', …);">' + esc(cfg.extra) + "</textarea>" +
       '<div class="hint">Appended after the init calls. “Apply &amp; reload” saves them in this browser only; put them in the scenario’s <code>extra</code> field in scenarios.json to make them permanent.</div></div>' +
