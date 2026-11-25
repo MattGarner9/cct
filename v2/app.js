@@ -100,18 +100,19 @@
     function draw() {
       var shown = list.filter(function (s) {
         return (filter === "All" || s.category === filter) &&
-          (s.title + " " + s.description + " " + (s.tags || []).join(" ")).toLowerCase().indexOf(q) !== -1;
+          (s.title + " " + s.description + " " + (s.tags || []).join(" ") + " " + (s.digitalPoc || "") + " " + (s.skill || "")).toLowerCase().indexOf(q) !== -1;
       });
       $("#app").innerHTML =
         '<div class="hero"><div class="in"><h1>CXone Integration Test Lab</h1><p>Pick a scenario to load it in a realistic customer page, with the integration, config and expected behavior shown alongside.</p></div></div>' +
         '<div class="wrap">' +
         (warnings.length ? '<div class="warn"><b>URL overlap warning</b> (Guide rules match any part of the URL): ' + esc(warnings.join("; ")) + "</div>" : "") +
         '<div class="filters">' + cats.map(function (c) { return '<button class="chip' + (c === filter ? " on" : "") + '" data-c="' + esc(c) + '">' + esc(c) + "</button>"; }).join("") +
-        '<input class="search" id="q" placeholder="Search scenarios…" value="' + esc(q) + '"></div>' +
+        '<input class="search" id="q" placeholder="Search title, tag, POC, skill…" value="' + esc(q) + '"></div>' +
         '<div class="grid">' + (shown.map(function (s) {
           return '<a class="card" href="' + scenarioUrl(s.id) + '" style="--c:' + esc(integ(data, s.integration).color) + '">' +
             '<div class="row">' + badge(data, s.integration) + '<span class="meta">Tenant ' + esc(s.tenant) + "</span></div>" +
             "<h3>" + esc(s.title) + "</h3><p>" + esc(s.description) + "</p>" +
+            ((s.digitalPoc || s.skill) ? '<div class="who">' + (s.digitalPoc ? '<span><b>POC</b> ' + esc(s.digitalPoc) + "</span>" : "") + (s.skill ? '<span><b>Skill</b> ' + esc(s.skill) + "</span>" : "") + "</div>" : "") +
             '<div class="row"><div class="tags">' + (s.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") + '</div><span class="btn primary">Launch ›</span></div></a>';
         }).join("") || '<div class="empty">No scenarios match.</div>') +
         '<div class="card add" style="--c:var(--line)"><h3>+ Add a scenario</h3><p>Add one entry to <code>scenarios.json</code> and it appears here automatically. See the README.</p></div>' +

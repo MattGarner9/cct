@@ -35,8 +35,8 @@ loads one in a realistic customer page with a Test Panel showing the integration
 | `site` / `siteName` | `portal` or `support` page layout, and the heading shown over the photo |
 | `hero`, `hero800` | Optional per-scenario hero images (default is set under `settings`) |
 | `loader` | Optional per-scenario loader URL (default comes from the selected environment) |
-| `digitalPoc` | Optional text: the Digital point of contact for this scenario. Shown in the Test Panel |
-| `skill` | Optional text: the skill associated with this scenario. Shown in the Test Panel |
+| `digitalPoc` | Optional text: the Digital point of contact for this scenario. Shown in the Test Panel and on the hub card, and searchable on the hub |
+| `skill` | Optional text: the skill associated with this scenario. Shown in the Test Panel and on the hub card, and searchable on the hub |
 | `comment` | Optional free text (use `\n` for line breaks). Shown in the Test Panel |
 | `legacyPage` | The old `about*.html` page this scenario replaces (information only) |
 
